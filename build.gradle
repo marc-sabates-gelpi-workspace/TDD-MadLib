@@ -1,0 +1,13 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'net.marcus.MadLib'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile "junit:junit:4.+"
+}
