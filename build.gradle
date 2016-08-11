@@ -3,6 +3,9 @@ apply plugin: 'java'
 
 mainClassName = 'net.marcus.MadLib'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
     jcenter()
@@ -10,4 +13,5 @@ repositories {
 
 dependencies {
     testCompile "junit:junit:4.+"
+    testCompile "org.hamcrest:hamcrest-core:1.+"
 }
