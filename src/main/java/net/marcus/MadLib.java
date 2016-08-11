@@ -22,21 +22,25 @@ public class MadLib {
 	}
 
 
-	public MadLib(InputStream inputStream, PrintStream outputStream) {
-		scanner = new Scanner(inputStream);
-		this.outputStream = outputStream;
-	}
-
 	public MadLib() {
 		scanner = new Scanner(System.in);
 		outputStream = System.out;
+	}
+	
+	public MadLib(InputStream inputStream, PrintStream outputStream) {
+		scanner = new Scanner(inputStream);
+		this.outputStream = outputStream;
 	}
 
 	public void playMadLib() {
 		retrieveInputs();
 		printMadPhrase();
 	}
-
+	
+	public int getSuccessfullyPromptedTimes() {
+		return successfullyPromptedTimes;
+	}
+	
 	private void printMadPhrase() {
 		outputStream.println(String.format(MAD_PHRASE, words[1], words[2], words[0], words[3]));
 	}
@@ -63,16 +67,7 @@ public class MadLib {
 		return word;
 	}
 
-
 	private boolean isNotAWord(String text) {
 		return !WORD_PATTERN.matcher(text).matches();
-	}
-
-	public int getSuccessfullyPromptedTimes() {
-		return successfullyPromptedTimes;
-	}
-	
-	public String[] getWords(){
-		return words;
 	}
 }
